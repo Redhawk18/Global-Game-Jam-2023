@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : Character
 {
     private float runSpeed = 2.0f;
-    private float walkSpeed = 1.0f;
+    //private float walkSpeed = 1.0f;
     public override void Start()
     {
         base.Start();
