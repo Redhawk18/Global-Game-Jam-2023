@@ -18,14 +18,14 @@ public abstract class Character : MonoBehaviour
 
     //[Header("Character Stats")]
 
-    protected Rigidbody2D rb;
-    protected Animator myAnimator;
+    protected new Rigidbody2D rigidbody;
+    protected Animator animator;
 
     #region monos
     public virtual void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        myAnimator = GetComponent<Animator>();
+        rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     public virtual void Update()
     {
@@ -42,7 +42,7 @@ public abstract class Character : MonoBehaviour
     #region mechanics
     protected void Move()
     {
-        rb.velocity = new Vector2(direction * speed, rb.velocity.y);
+        rigidbody.velocity = new Vector2(direction * speed, rigidbody.velocity.y);
     }
     #endregion
 
