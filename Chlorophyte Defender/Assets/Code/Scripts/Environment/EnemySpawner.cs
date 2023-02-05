@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Enemy enemy;
+    [SerializeField] private Vector2 position;
     [SerializeField] private float rate;
+
     private float timer;
 
 
@@ -22,7 +24,11 @@ public class EnemySpawner : MonoBehaviour
         {
             timer += Time.deltaTime;
         } else {
-            Instantiate(enemy);
+            Vector3 position3d = new Vector3();
+            position3d.x = position.x;
+            position3d.y = position.y;
+            position3d.z = 0; 
+            Instantiate(enemy, new Vector3(position.x, position.y, 0), transform.rotation);
             timer = 0;
         }
 

@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    private enum State {
-        Walk,
-        Attack
-    }
 
-    private State state;
-    
-    [SerializeField] private Player player;
-
+    [SerializeField] private float rate;
+    private float timer;
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
-        state = State.Walk;
     }
 
     // Update is called once per frame
@@ -25,36 +18,36 @@ public class Enemy : Character
     {
         //Debug.Log("UPDATE");
 
-        // if (State.Chase == state) {
-
-        //     // if(direction == -1) { //right side walking left
-        //     //     //TODO
-        //     // } else {
-        //     //     //TODO
-        //     // }
-
-        //     HandleMovement();
-
-        // } else if (State.Attack == state) {
-        //     //TODO
-
-        // }
+        HandleMovement();
     }
 
     void OnTriggerEnter2D(Collider2D collider) {
-        Debug.Log("ENTERED COLLISION BOX");
-        state = State.Attack;
+        //Debug.Log("ENTERED COLLISION BOX");
+        if(!(gameObject.tag == "Player")) {
+            animator.SetTrigger("animation_inrange");
+            if(timer < rate)
+            {
+                timer += Time.deltaTime;
+            } else {
+                collider.gameObject.GetComponent<Character>().DecreaseHealth(Random.Range(1, 7));
+                timer = 0;
+            }
+        }
+        
+        
     }
 
-    void OnTriggerExit2D(Collider2D collider) {
-        Debug.Log("EXITED COLLISION BOX");
-        state = State.Walk;
-    }
+    // void OnTriggerExit2D(Collider2D collider) {
+    //     Debug.Log("EXITED COLLISION BOX");
+    //     //animator.SetBool("animation_inrange", false); //doesnt work
+    //     //animator.SetTrigger("animation_inrange"); //doesnt work
+    // }
 
     protected override void HandleMovement()
     {
         base.HandleMovement();
         //animator.SetFloat("animation_speed", Mathf.Abs(direction));
-        TurnAround(direction);
+        
+        //TurnAround(direction);
     }
 }

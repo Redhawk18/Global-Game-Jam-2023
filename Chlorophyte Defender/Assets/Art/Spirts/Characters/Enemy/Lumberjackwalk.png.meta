@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e52d6a867e751694181d32dffde074c9
+guid: 20e2484fa7946b649899d5c860950ef7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lumberjackspritesheet_0
+      name: Lumberjackwalk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ced75da73f04aa4bbf3f26e5428b158
-      internalID: -819936720
+      spriteID: daa52f1e888b447469bbcddf6c82d3b4
+      internalID: -921459367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lumberjackspritesheet_1
+      name: Lumberjackwalk_1
       rect:
         serializedVersion: 2
         x: 64
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4aa3c54f79e34c4897f133ab3029ddc
-      internalID: -1630236427
+      spriteID: c353a2d439cf62f449aafb118fb1b21c
+      internalID: -644647133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lumberjackspritesheet_2
+      name: Lumberjackwalk_2
       rect:
         serializedVersion: 2
         x: 128
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6689af3026b80b7409dcadec7fd53d20
-      internalID: 959979819
+      spriteID: 834db16df03dcba4992508d18d09c11c
+      internalID: 772413330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lumberjackspritesheet_3
+      name: Lumberjackwalk_3
       rect:
         serializedVersion: 2
         x: 192
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c5a52ce0e5ea89479744ffdd260a39b
-      internalID: -2040281826
+      spriteID: 833cff65e3b8798498d159278b04094e
+      internalID: 2025828291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lumberjackspritesheet_4
+      name: Lumberjackwalk_4
       rect:
         serializedVersion: 2
         x: 256
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ee60fcb52b72f147a86926f00e49976
-      internalID: -1385501084
+      spriteID: ca0924445619a3148b070b098f824936
+      internalID: -1554208415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lumberjackspritesheet_5
+      name: Lumberjackwalk_5
       rect:
         serializedVersion: 2
         x: 320
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd079edde5e8bbe4ca861e8b4d4f870e
-      internalID: -1782637511
+      spriteID: ff95e144b630b0c488bbbc2c49126fce
+      internalID: -743757212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lumberjackspritesheet_6
+      name: Lumberjackwalk_6
       rect:
         serializedVersion: 2
         x: 384
@@ -257,8 +257,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 055933d20f3d87343b050305785d5a7b
-      internalID: 115888560
+      spriteID: 2055b0df53be27640acdf1ee980d32aa
+      internalID: 1470181998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumberjackwalk_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e8e228ad52fd741bfe1c052234585c
+      internalID: -1927208808
       vertices: []
       indices: 
       edges: []
@@ -274,13 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lumberjackspritesheet_3: -2040281826
-      lumberjackspritesheet_1: -1630236427
-      lumberjackspritesheet_4: -1385501084
-      lumberjackspritesheet_0: -819936720
-      lumberjackspritesheet_5: -1782637511
-      lumberjackspritesheet_2: 959979819
-      lumberjackspritesheet_6: 115888560
+      Lumberjackwalk_4: -1554208415
+      Lumberjackwalk_3: 2025828291
+      Lumberjackwalk_7: -1927208808
+      Lumberjackwalk_0: -921459367
+      Lumberjackwalk_5: -743757212
+      Lumberjackwalk_2: 772413330
+      Lumberjackwalk_6: 1470181998
+      Lumberjackwalk_1: -644647133
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
