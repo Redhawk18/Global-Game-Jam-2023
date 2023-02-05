@@ -4,68 +4,50 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    private enum State {
-        Target,
-        Chase,
-        Attack
-    }
 
-    
-
-    private State state;
-    private float distanceFromPlayer; 
-    private GameObject target;
-
-    [SerializeField] private float targetRange;
-    
-
-
+    [SerializeField] private float rate;
+    private float timer;
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
-
-        state = State.Chase;
-
     }
 
     // Update is called once per frame
     public override void Update()
     {
-        GameObject player = GameObject.Find("Player");
-        if(State.Target == state) {
-            //find new distances, if in range go after the player
-            //otherwise the goal
-            
+        //Debug.Log("UPDATE");
 
-            distanceFromPlayer = Vector3.Distance(player.transform.position, transform.position);
-            Debug.Log("distanceFromPlayer: " + distanceFromPlayer);
-
-            Debug.Log("targetRange: " + targetRange);
-            if(targetRange > distanceFromPlayer) { //switch target to player
-                target = player;
-
-            } else { //switch back to objective
-                //set objective as target
-            }
-
-            //end
-
-        } else if (State.Chase == state) {
-            //player.getDirection();
-            HandleMovement();
-
-        } else if (State.Attack == state) {
-
-
-        }
+        HandleMovement();
     }
+
+    void OnTriggerEnter2D(Collider2D collider) {
+        //Debug.Log("ENTERED COLLISION BOX");
+        if(!(gameObject.tag == "Player")) {
+            animator.SetTrigger("animation_inrange");
+            if(timer < rate)
+            {
+                timer += Time.deltaTime;
+            } else {
+                collider.gameObject.GetComponent<Character>().DecreaseHealth(Random.Range(1, 7));
+                timer = 0;
+            }
+        }
+        
+        
+    }
+
+    // void OnTriggerExit2D(Collider2D collider) {
+    //     Debug.Log("EXITED COLLISION BOX");
+    //     //animator.SetBool("animation_inrange", false); //doesnt work
+    //     //animator.SetTrigger("animation_inrange"); //doesnt work
+    // }
 
     protected override void HandleMovement()
     {
-        direction = -1;
         base.HandleMovement();
-        animator.SetFloat("animation_speed", Mathf.Abs(direction));
-        TurnAround(direction);
+        //animator.SetFloat("animation_speed", Mathf.Abs(direction));
+        
+        //TurnAround(direction);
     }
 }

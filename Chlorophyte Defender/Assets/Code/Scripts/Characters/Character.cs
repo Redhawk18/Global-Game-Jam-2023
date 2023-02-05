@@ -25,6 +25,8 @@ public abstract class Character : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        rigidbody.freezeRotation = true;
     }
     public virtual void Update()
     {
@@ -59,4 +61,20 @@ public abstract class Character : MonoBehaviour
         }
     }
     #endregion
+
+    public void DecreaseHealth(int amount) 
+    {
+        health -= amount;
+        Death();
+    }
+
+    private void Death() 
+    {
+        if(health <= 0)
+        {
+            //play animation
+            Debug.Log("Destroyed: " + GetComponentInParent<Character>().gameObject);
+            Destroy(GetComponentInParent<Character>().gameObject);
+        }
+    }
 }
