@@ -79,7 +79,7 @@ public abstract class Character : MonoBehaviour
         {
             //play animation
             Debug.Log("death animation");
-            animator.SetTrigger("animation_death");
+            
             //kill
             Debug.Log("Destroyed: " + GetComponentInParent<Character>().gameObject);
             Destroy(GetComponentInParent<Character>().gameObject);

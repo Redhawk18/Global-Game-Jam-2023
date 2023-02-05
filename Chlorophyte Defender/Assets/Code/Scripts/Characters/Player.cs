@@ -46,9 +46,13 @@ public class Player : Character
 
         protected override void Death() 
     {
+        if(health <= 0) {
+            animator.SetTrigger("animation_death");
+        }
         base.Death();
         if(health <= 0)
         {
+            
             SceneManager.LoadScene("Main Scene");
         }
         
