@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy : Character
 {
     private enum State {
-        Target,
         Chase,
         Attack
     }
@@ -14,8 +13,9 @@ public class Enemy : Character
 
     private State state;
     private float distanceFromPlayer; 
-    private GameObject target;
-
+    //private Player target;
+    
+    [SerializeField] private Player player;
     [SerializeField] private float targetRange;
     
 
@@ -32,27 +32,9 @@ public class Enemy : Character
     // Update is called once per frame
     public override void Update()
     {
-        GameObject player = GameObject.Find("Player");
-        if(State.Target == state) {
-            //find new distances, if in range go after the player
-            //otherwise the goal
-            
-
-            distanceFromPlayer = Vector3.Distance(player.transform.position, transform.position);
-            Debug.Log("distanceFromPlayer: " + distanceFromPlayer);
-
-            Debug.Log("targetRange: " + targetRange);
-            if(targetRange > distanceFromPlayer) { //switch target to player
-                target = player;
-
-            } else { //switch back to objective
-                //set objective as target
-            }
-
-            //end
-
-        } else if (State.Chase == state) {
+        if (State.Chase == state) {
             //player.getDirection();
+            //player.get
             HandleMovement();
 
         } else if (State.Attack == state) {

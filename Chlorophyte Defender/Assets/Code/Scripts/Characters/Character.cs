@@ -25,6 +25,8 @@ public abstract class Character : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        rigidbody.freezeRotation = true;
     }
     public virtual void Update()
     {
