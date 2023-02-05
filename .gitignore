@@ -9,7 +9,7 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
-UserSettings/
+UserSettings/Layouts
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -22,6 +22,7 @@ UserSettings/
 
 # Visual Studio cache directory
 .vs/
+.vsconfig/
 .vscode/
 
 # Gradle cache directory
@@ -60,3 +61,4 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Chlorophyte Defender/UserSettings/Layouts/default-2021.dwlt
