@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Player : Character
 {
+    private HealthUI scoreManager; 
     private float runSpeed = 2.0f;
     //private float walkSpeed = 1.0f;
     public override void Start()
     {
         base.Start();
         speed = runSpeed;
+
+        //scoreManager = FindObjectOfType<HealthUI>();
+        //scoreManager.Score = PlayerPrefs.GetInt("Score", 100);
     }
     public override void Update()
     {
@@ -27,6 +31,9 @@ public class Player : Character
             transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = false;
             //GetComponent<BoxCollider2D> ().enabled = false;
         }
+
+        //update gui
+        //scoreManager.Score = PlayerPrefs.GetInt("Score", health);
         
     }
     protected override void HandleMovement()

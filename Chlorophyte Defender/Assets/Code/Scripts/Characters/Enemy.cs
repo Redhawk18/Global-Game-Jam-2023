@@ -6,6 +6,7 @@ public class Enemy : Character
 {
 
     [SerializeField] private float rate;
+    [SerializeField] private Player player;
     private float timer;
     // Start is called before the first frame update
     public override void Start()
@@ -29,7 +30,7 @@ public class Enemy : Character
             {
                 timer += Time.deltaTime;
             } else {
-                collider.gameObject.GetComponent<Character>().DecreaseHealth(Random.Range(1, 7));
+                player.DecreaseHealth(Random.Range(1, 7));
                 timer = 0;
             }
         }
