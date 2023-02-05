@@ -32,7 +32,7 @@ public class Enemy : Character
     // Update is called once per frame
     public override void Update()
     {
-        Player player = GameObject.Find("Player");
+        GameObject player = GameObject.Find("Player");
         if(State.Target == state) {
             //find new distances, if in range go after the player
             //otherwise the goal
