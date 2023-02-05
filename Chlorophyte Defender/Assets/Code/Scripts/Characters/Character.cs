@@ -62,6 +62,11 @@ public abstract class Character : MonoBehaviour
     }
     #endregion
 
+    public int GetHealth()
+    {
+        return health;
+    }
+
     public void DecreaseHealth(int amount) 
     {
         health -= amount;
@@ -73,6 +78,8 @@ public abstract class Character : MonoBehaviour
         if(health <= 0)
         {
             //play animation
+            animator.SetTrigger("animation_death");
+            //kill
             Debug.Log("Destroyed: " + GetComponentInParent<Character>().gameObject);
             Destroy(GetComponentInParent<Character>().gameObject);
         }
