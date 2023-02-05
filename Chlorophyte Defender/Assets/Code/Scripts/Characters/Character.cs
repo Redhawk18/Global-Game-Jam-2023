@@ -78,6 +78,7 @@ public abstract class Character : MonoBehaviour
         if(health <= 0)
         {
             //play animation
+            Debug.Log("death animation");
             animator.SetTrigger("animation_death");
             //kill
             Debug.Log("Destroyed: " + GetComponentInParent<Character>().gameObject);
