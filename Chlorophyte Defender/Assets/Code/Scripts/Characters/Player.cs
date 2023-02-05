@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Character
 {
@@ -41,6 +42,16 @@ public class Player : Character
         base.HandleMovement();
         animator.SetFloat("animation_speed", Mathf.Abs(direction));
         TurnAround(direction);
+    }
+
+        protected override void Death() 
+    {
+        base.Death();
+        if(health <= 0)
+        {
+            SceneManager.LoadScene("Main Scene");
+        }
+        
     }
     
 }

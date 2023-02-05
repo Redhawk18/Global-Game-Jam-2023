@@ -73,7 +73,7 @@ public abstract class Character : MonoBehaviour
         Death();
     }
 
-    private void Death() 
+    protected virtual void Death() 
     {
         if(health <= 0)
         {
