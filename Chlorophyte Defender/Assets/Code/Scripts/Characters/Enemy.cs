@@ -5,49 +5,56 @@ using UnityEngine;
 public class Enemy : Character
 {
     private enum State {
-        Chase,
+        Walk,
         Attack
     }
 
-    
-
     private State state;
-    private float distanceFromPlayer; 
-    //private Player target;
     
     [SerializeField] private Player player;
-    [SerializeField] private float targetRange;
-    
-
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
-
-        state = State.Chase;
-
+        state = State.Walk;
     }
 
     // Update is called once per frame
     public override void Update()
     {
-        if (State.Chase == state) {
-            //player.getDirection();
-            //player.get
-            HandleMovement();
+        //Debug.Log("UPDATE");
 
-        } else if (State.Attack == state) {
+        // if (State.Chase == state) {
 
+        //     // if(direction == -1) { //right side walking left
+        //     //     //TODO
+        //     // } else {
+        //     //     //TODO
+        //     // }
 
-        }
+        //     HandleMovement();
+
+        // } else if (State.Attack == state) {
+        //     //TODO
+
+        // }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider) {
+        Debug.Log("ENTERED COLLISION BOX");
+        state = State.Attack;
+    }
+
+    void OnTriggerExit2D(Collider2D collider) {
+        Debug.Log("EXITED COLLISION BOX");
+        state = State.Walk;
     }
 
     protected override void HandleMovement()
     {
-        direction = -1;
         base.HandleMovement();
-        animator.SetFloat("animation_speed", Mathf.Abs(direction));
+        //animator.SetFloat("animation_speed", Mathf.Abs(direction));
         TurnAround(direction);
     }
 }
