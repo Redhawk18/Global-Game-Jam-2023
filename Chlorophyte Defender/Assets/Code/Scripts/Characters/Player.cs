@@ -22,5 +22,9 @@ public class Player : Character
         animator.SetFloat("animation_speed", Mathf.Abs(direction));
         TurnAround(direction);
     }
+
+    public float getDirection() {
+        return direction;
+    }
     
 }
