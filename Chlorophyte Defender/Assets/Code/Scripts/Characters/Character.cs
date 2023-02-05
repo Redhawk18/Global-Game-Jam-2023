@@ -8,13 +8,12 @@ public abstract class Character : MonoBehaviour
 {
     [Header("Movement Variables")]
     [SerializeField] protected float speed = 1.0f;
-    [SerializeField] protected float direction;
+    [SerializeField] public float direction;
 
     protected bool facingRight = true;
 
-    //[Header("Jump Variables")]
-
-    //[Header("Attack Variables")]
+    [Header("Attack Variables")]
+    [SerializeField] protected int health;
 
     //[Header("Character Stats")]
 
